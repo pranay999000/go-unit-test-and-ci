@@ -16,5 +16,9 @@ func main() {
 	router := gin.Default()
 
 	router.GET("/", RootHandler)
-	router.Run()
+
+	err := router.Run("localhost:8080")
+	if err != nil {
+		panic("An error occured!")
+	}
 }

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -25,7 +25,7 @@ func TestRootHandler(t *testing.T) {
 	w := httptest.NewRecorder()
 	r.ServeHTTP(w, req)
 
-	resp, _ := ioutil.ReadAll(w.Body)
+	resp, _ := io.ReadAll(w.Body)
 	assert.Equal(t, mockResponse, string(resp))
 	assert.Equal(t, http.StatusOK, w.Code)
 }
