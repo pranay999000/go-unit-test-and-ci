@@ -1,4 +1,4 @@
-FROM golang:1.17-buster AS build
+FROM golang:1.19-buster AS build
 
 WORKDIR /app
 
@@ -10,6 +10,14 @@ RUN go mod download
 COPY *.go ./
 
 RUN go test
+
+RUN go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+
+RUN golangci-lint run
+
+RUN go install golang.org/x/vuln/cmd/govulncheck@latest
+
+RUN govulncheck -v ./
 
 RUN go build -o /unit-test
 

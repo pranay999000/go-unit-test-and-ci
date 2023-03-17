@@ -17,7 +17,8 @@ func main() {
 
 	router.GET("/", RootHandler)
 
-	err := router.Run("localhost:8080")
+	// router.Run("localhost:8080")
+	err := router.Run()
 	if err != nil {
 		panic("An error occured!")
 	}
