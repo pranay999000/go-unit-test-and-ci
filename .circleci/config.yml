@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  run_tests:
+    docker:
+      - image: cimg/go:1.20.2
+    steps:
+      - run: echo "Say hello to GoLang Project!"
+      - run: go version
+      # - checkout
+      # - run:
+      #   name: Install go mods
+      #   command: |
+      #     go mod download
+      # - run:
+      #   name: Run unit test
+      #   command: |
+      #     go test --reporter
+
+workflows:
+  first_circle_ci:
+    jobs:
+      - run_tests
