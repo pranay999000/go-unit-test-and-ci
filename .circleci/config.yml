@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: echo "Say hello to GoLang Project!"
       - run: go version
-      # - checkout
+      - checkout
       # - run:
       #   name: Install go mods
       #   command: |
