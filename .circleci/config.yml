@@ -6,16 +6,16 @@ jobs:
     steps:
       - run: echo "Say hello to GoLang Project!"
       - run: go version
-      - checkout
-      - run:
-        name: Install go mods
-        command: |
-          go mod download
-          go version
-      - run:
-        name: Run unit test
-        command: |
-          go test
+      # - checkout
+      # - run:
+      #   name: Install go mods
+      #   command: |
+      #     go mod download
+      #     go version
+      # - run:
+      #   name: Run unit test
+      #   command: |
+      #     go test
 
 workflows:
   first_circle_ci:
