@@ -7,11 +7,11 @@ jobs:
       - run: echo "Say hello to GoLang Project!"
       - run: go version
       - checkout
-      # - run:
-      #   name: Install go mods
-      #   command: |
-      #     go mod download
-      #     go version
+      - run:
+        name: Install go mods
+        command: |
+          go mod download
+          go version
       # - run:
       #   name: Run unit test
       #   command: |
