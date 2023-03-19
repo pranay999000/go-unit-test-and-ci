@@ -12,10 +12,10 @@ jobs:
           command: |
             go mod download
             go version
-      # - run:
-      #   name: Run unit test
-      #   command: |
-      #     go test
+      - run:
+          name: Run unit test
+          command: |
+            go test
 
 workflows:
   first_circle_ci:
