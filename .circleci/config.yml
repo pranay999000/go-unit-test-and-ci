@@ -8,10 +8,10 @@ jobs:
       - run: go version
       - checkout
       - run:
-        name: Install go mods
-        command: |
-          go mod download
-          go version
+          name: Install go mods
+          command: |
+            go mod download
+            go version
       # - run:
       #   name: Run unit test
       #   command: |
