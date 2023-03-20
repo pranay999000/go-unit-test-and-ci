@@ -29,6 +29,6 @@ COPY --from=build /unit-test /unit-test
 
 EXPOSE 8080
 
-USER nonroot:nonroot
+USER 1001:1001
 
 ENTRYPOINT [ "/unit-test" ]

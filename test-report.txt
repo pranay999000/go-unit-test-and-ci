@@ -1,0 +1,4 @@
+mode: set
+unit-test/main.go:9.34,13.2 1 1
+unit-test/main.go:15.13,22.16 4 0
+unit-test/main.go:22.16,23.29 1 0
