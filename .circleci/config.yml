@@ -50,3 +50,9 @@ jobs:
       - run:
           command: |
             ls
+
+workflows:
+  docker_image:
+    jobs:
+      - test_project
+      - build_docker_image
