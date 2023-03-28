@@ -50,7 +50,7 @@ jobs:
       - checkout
       - run:
           command: |
-            ls
+            docker version
 
 workflows:
   docker_image:
