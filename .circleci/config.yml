@@ -1,23 +1,52 @@
+# version: 2.1
+# jobs:
+#   run_tests:
+#     docker:
+#       - image: cimg/go:1.20.2
+#     steps:
+#       - run: echo "Say hello to GoLang Project!"
+#       - run: go version
+#       - checkout
+#       - run:
+#           name: Install go mods
+#           command: |
+#             go mod download
+#             go version
+#       - run:
+#           name: Run unit test
+#           command: |
+#             go test
+
+# workflows:
+#   first_circle_ci:
+#     jobs:
+#       - run_tests
+
 version: 2.1
 jobs:
-  run_tests:
+  test_project:
     docker:
       - image: cimg/go:1.20.2
     steps:
-      - run: echo "Say hello to GoLang Project!"
+      - run: echo "Starting project test"
       - run: go version
       - checkout
       - run:
           name: Install go mods
           command: |
             go mod download
-            go version
       - run:
           name: Run unit test
           command: |
             go test
 
-workflows:
-  first_circle_ci:
-    jobs:
-      - run_tests
+  build_docker_image:
+    docker:
+      - image: cimg/base:2022.03
+        auth:
+          username: pranay999000
+          password: Confidential@02
+    steps:
+      - run:
+          command: |
+            ls
