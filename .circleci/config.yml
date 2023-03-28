@@ -43,9 +43,9 @@ jobs:
   build_docker_image:
     docker:
       - image: cimg/base:2022.03
-        auth:
-          username: pranay999000
-          password: Confidential@02
+        # auth:
+        #   username: pranay999000
+        #   password: Confidential@02
     steps:
       - setup_remote_docker:
           version: 20.10.14
@@ -55,7 +55,7 @@ jobs:
             docker build -t pranay999000/unit-test:$CIRCLE_BRANCH -f Dockerfile.multistage .
       - run:
           command: |
-            docker login
+            docker login --username pranay999000 --password Confidential@02
             docker push pranay999000/unit-test:$CIRCLE_BRANCH
 
 workflows:
