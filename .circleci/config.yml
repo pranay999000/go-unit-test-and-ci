@@ -52,7 +52,10 @@ jobs:
       - checkout
       - run:
           command: |
-            docker version
+            docker build -t pranay999000/unit-test:$CIRCLE_BRANCH Dockerfile.multistage .
+      - run:
+          command: |
+            docker push pranay999000/unit-test:$CIRCLE_BRANCH
 
 workflows:
   docker_image:
