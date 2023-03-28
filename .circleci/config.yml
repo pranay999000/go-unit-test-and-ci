@@ -47,6 +47,7 @@ jobs:
           username: pranay999000
           password: Confidential@02
     steps:
+      - checkout
       - run:
           command: |
             ls
