@@ -55,6 +55,7 @@ jobs:
             docker build -t pranay999000/unit-test:$CIRCLE_BRANCH -f Dockerfile.multistage .
       - run:
           command: |
+            docker login
             docker push pranay999000/unit-test:$CIRCLE_BRANCH
 
 workflows:
