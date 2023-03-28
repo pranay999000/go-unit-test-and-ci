@@ -52,11 +52,11 @@ jobs:
       - checkout
       - run:
           command: |
-            docker build -t pranay999000/unit-test:$CIRCLE_BRANCH -f Dockerfile.multistage .
+            docker build -t pranay999000/unit-test:$CIRCLE_SHA1 -f Dockerfile.multistage .
       - run:
           command: |
             docker login --username pranay999000 --password Confidential@02
-            docker push pranay999000/unit-test:$CIRCLE_BRANCH
+            docker push pranay999000/unit-test:$CIRCLE_SHA1
 
 workflows:
   docker_image:
