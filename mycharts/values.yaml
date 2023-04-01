@@ -1,0 +1,11 @@
+replicaCount: 1
+appName: go
+
+container:
+  image: pranay999000/unit-test
+  port: 8080
+
+network:
+  type: LoadBalancer
+  protocol: TCP
+  nodePort: 30000

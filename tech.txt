@@ -4,27 +4,3 @@ govulncheck -v ./
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 golangci-lint run
 
-
-Tell me about yourself
-Revise Operating System and Databases
-Read News
-Add docker image integration in CI Process
-Build a deployment file for K8s
-Trivy scan for deployment files 
-
-
-Name
-
-Course Name
-
-College Name
-
-College Project
-
-Internship Exp
-
-Coding Exp
-
-Cultural Activities
-
-Social Skills
